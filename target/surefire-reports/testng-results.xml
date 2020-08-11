@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="TestNG Suite" duration-ms="307145" started-at="2020-08-05T14:34:22 GMT+05:30" finished-at="2020-08-05T14:39:29 GMT+05:30">
+  <suite name="Scuba Assignments" duration-ms="101065" started-at="2020-08-10T18:35:41 GMT+05:30" finished-at="2020-08-10T18:37:22 GMT+05:30">
     <groups>
     </groups>
-    <test name="TestNG Test1" duration-ms="307145" started-at="2020-08-05T14:34:22 GMT+05:30" finished-at="2020-08-05T14:39:29 GMT+05:30">
-      <class name="com.CucumberRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.CucumberRunner@2a266d09]" name="setUpClass" is-config="true" duration-ms="516" started-at="2020-08-05T14:34:22 GMT+05:30" finished-at="2020-08-05T14:34:23 GMT+05:30">
+    <test name="ParaBank_Cucumber_DB" duration-ms="101065" started-at="2020-08-10T18:35:41 GMT+05:30" finished-at="2020-08-10T18:37:22 GMT+05:30">
+      <class name="com.CucumberRunner_DB">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.CucumberRunner_DB@36d585c]" name="setUpClass" is-config="true" duration-ms="241" started-at="2020-08-10T18:35:41 GMT+05:30" finished-at="2020-08-10T18:35:42 GMT+05:30">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="setTestName(java.lang.reflect.Method, [Ljava.lang.Object;)[pri:0, instance:com.CucumberRunner@2a266d09]" name="setTestName" is-config="true" duration-ms="15" started-at="2020-08-05T14:34:23 GMT+05:30" finished-at="2020-08-05T14:34:23 GMT+05:30">
+        <test-method status="PASS" signature="setTestName(java.lang.reflect.Method, [Ljava.lang.Object;)[pri:0, instance:com.CucumberRunner_DB@36d585c]" name="setTestName" is-config="true" duration-ms="2" started-at="2020-08-10T18:35:42 GMT+05:30" finished-at="2020-08-10T18:35:42 GMT+05:30">
           <params>
             <param index="0">
               <value>
@@ -20,14 +20,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Object;@49a64d82]]>
+                <![CDATA[[Ljava.lang.Object;@20312893]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setTestName -->
-        <test-method status="PASS" signature="scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.CucumberRunner@2a266d09]" name="scenario" duration-ms="305305" started-at="2020-08-05T14:34:23 GMT+05:30" data-provider="scenarios" finished-at="2020-08-05T14:39:28 GMT+05:30">
+        <test-method status="PASS" signature="scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.CucumberRunner_DB@36d585c]" name="scenario" duration-ms="99492" started-at="2020-08-10T18:35:42 GMT+05:30" data-provider="scenarios" finished-at="2020-08-10T18:37:21 GMT+05:30">
           <params>
             <param index="0">
               <value>
@@ -43,22 +43,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.CucumberRunner@2a266d09]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-08-05T14:39:29 GMT+05:30" finished-at="2020-08-05T14:39:29 GMT+05:30">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.CucumberRunner_DB@36d585c]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-08-10T18:37:22 GMT+05:30" finished-at="2020-08-10T18:37:22 GMT+05:30">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Register The User and Creating Account and Trasferring status=SUCCESS method=CucumberBaseTest.scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.CucumberRunner@2a266d09] output={null}]]]>
+                <![CDATA[[TestResult name=Register The User and Creating Account and Trasferring status=SUCCESS method=CucumberBaseTest.scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.CucumberRunner_DB@36d585c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.CucumberRunner@2a266d09]" name="tearDownClass" is-config="true" duration-ms="77" started-at="2020-08-05T14:39:29 GMT+05:30" finished-at="2020-08-05T14:39:29 GMT+05:30">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.CucumberRunner_DB@36d585c]" name="tearDownClass" is-config="true" duration-ms="51" started-at="2020-08-10T18:37:22 GMT+05:30" finished-at="2020-08-10T18:37:22 GMT+05:30">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- com.CucumberRunner -->
-    </test> <!-- TestNG Test1 -->
-  </suite> <!-- TestNG Suite -->
+      </class> <!-- com.CucumberRunner_DB -->
+    </test> <!-- ParaBank_Cucumber_DB -->
+  </suite> <!-- Scuba Assignments -->
 </testng-results>

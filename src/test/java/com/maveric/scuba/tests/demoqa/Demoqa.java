@@ -37,7 +37,7 @@ public  void ProfileForm() throws InterruptedException {
 	Utils.profileformfilling();
 }
 	
-@Test(priority = 2)
+//@Test(priority = 2)
 public  void BookStore() throws InterruptedException
 {
 	Utils.driverinitialize();
@@ -49,24 +49,14 @@ public  void BookStore() throws InterruptedException
 public void AllElements()
 {
 	Method.login();
-//	Utils.driverinitialize();
-//	Utils.urllaunch("https://demoqa.com/login");
+	Utils.driverinitialize();
+	Utils.urllaunch("https://demoqa.com/login");
 //	Utils.textbox();
-//	Utils.checkbox();
-//	Utils.radiobutton();
-//	Utils.buttons();
-//	Utils.windows();
-//	Utils.alerts();
-//	Utils.modal();
+	Utils.checkbox();
+	Utils.radiobutton();
+	Utils.buttons();
+	Utils.windows();
+	Utils.alerts();
+	Utils.modal();
 }
-
-
-//@Test
-//public void exceldata() throws IOException
-//{
-//	Utils.ReadExcel(1, 1);
-//	Utils.ReadExcel(1, 2);
-//	Utils.ReadExcel(1, 3);
-//	Utils.ReadExcel(1, 4);	
-//}
 }

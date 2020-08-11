@@ -80,10 +80,10 @@ public class ParaBank{
 			Utils.Btnclick(page.AccountsOverviewLink);
 			Utils.waitVisible(page.AccountTableRows);
 			Utils.waitVisible(page.getAccNumber(2));
-			String firstAccount = Utils.getText(page.getAccNumber(1));
+			firstAccount = Utils.getText(page.getAccNumber(1));
 			System.out.println("firstAccount1 - " + firstAccount);	
 //			screenshot
-			Utils.logScreenshot("Default account : " + firstAccount);		
+			Utils.logScreenshot("Default account : " + firstAccount);	
 		}
 		
 		//Account creation
@@ -115,7 +115,7 @@ public class ParaBank{
 			Thread.sleep(3000);
 			Utils.send(page.AmountTextBox, "100");
 			Utils.dropdownselecttxt(page.ToAccountDropDown, firstAccount);
-			Utils.dropdownselecttxt(page.FromAccountDropDown, newAccountNumber);	
+			Utils.dropdownselecttxt(page.FromAccountDropDown, newAccountNumber);
 //			screenshot
 			Utils.logScreenshot("selected transUtilsion accounts");		
 			Utils.Btnclick(page.TransferButton);

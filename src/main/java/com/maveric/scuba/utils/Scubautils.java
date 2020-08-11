@@ -30,18 +30,18 @@ public class Scubautils extends WebActions{
 	
 	public  WebElement loc;
 	public  WebElement ele;
-	WebDriverWait wait;
+	public WebDriverWait wait=null;
 	public  XSSFWorkbook workbook;
 	public  String ExcelPath = ".\\TestData\\parabank.xlsx";
 	public  String SheetName = "TestData";
-	public  Sheet sheet;
+//	public  Sheet sheet;
 	
 	Logger logger = LogManager.getLogger();
 
 	public void driverinitialize()
 	{
 		driver = Driver.getWebDriver();
-		wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		logger.info("Driver Is Launched and Maximized");
@@ -62,44 +62,48 @@ public class Scubautils extends WebActions{
 	
 	public  void send(By loc, String value )
 	{
+		WebDriver driver = Driver.getWebDriver();
+		WebElement ele = driver.findElement(loc);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		try
-		{
-			WebElement ele = driver.findElement(loc);
-			wait.until(ExpectedConditions.visibilityOf(ele));
+		{	
+			wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
 			ele.clear();
 			ele.sendKeys(value);
-			logger.info("User Set the Value " + value + " in " + loc );
+			logger.info("User Set the Value " + value.toUpperCase() + " in the Element " + loc);
 		}
 		catch (Exception e) {
-	// TODO: handle exception
 			String exception = e.getMessage();
-			System.out.println(exception);
 			logger.warn("User Couldn't Set the Value " + value.toUpperCase() + " in " + loc + "And the Exception Message is " + exception );
-		}
-//		logScreenshot("Value " + value + "is set in " + loc );
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript(String.format("arguments[0].value='%s';",value), ele);
+		}		
 	}
 
 	public void Btnclick(By loc)
 	{
+		WebDriver driver = Driver.getWebDriver();
+		WebElement ele = driver.findElement(loc);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		try
 		{
-			Thread.sleep(5000);
-			WebElement ele = driver.findElement(loc);
 			wait.until(ExpectedConditions.elementToBeClickable(ele));
 			ele.click();
-			logger.info("User Clicked the " + loc );
+			logger.info("User Clicked the Element " + loc );
 		}
 		catch (Exception e) {
-	// TODO: handle exception
-//			JavascriptExecutor js = (JavascriptExecutor)driver;
-//            js.executeScript("arguments[0].click();",ele );
-			String exception = e.getMessage();
-			e.printStackTrace();
-//			WebElement element = driver.findElement(loc);
-			Actions actions = new Actions(driver);
-			actions.moveToElement(ele).click().perform();
-			logger.warn("User Couldn't click on " + loc + "And the Exception Message is " + exception );
+			driver = Driver.getWebDriver();
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+            js.executeScript("arguments[0].click();",ele);
 		}
+//			
+//			String exception = e.getMessage();
+//			e.printStackTrace();
+//			WebElement ele = driver.findElement(loc);
+//			Actions actions = new Actions(driver);
+//			actions.moveToElement(ele).click().perform();
+//			logger.warn("User Couldn't click on " + loc + "And the Exception Message is " + exception );
+//		}
 	}
 	
 	public void DblClick(By loc)
@@ -137,7 +141,8 @@ public class Scubautils extends WebActions{
 	{
 		try
 		{
-			Select dropdown = new Select(driver.findElement(loc));
+			WebElement ele = driver.findElement(loc);
+			Select dropdown = new Select(ele);
 			dropdown.selectByValue(value);
 			}
 		catch (Exception e) {
@@ -163,9 +168,12 @@ public class Scubautils extends WebActions{
 	
 	public  void dropdownselecttxt(By loc, String value)
 	{
+		WebDriver driver = Driver.getWebDriver();
+		WebElement ele = driver.findElement(loc);
+//		WebDriverWait wait = new WebDriverWait(driver, 60);
 		try
 		{
-			Select dropdown = new Select(driver.findElement(loc));
+			Select dropdown = new Select(ele);
 			dropdown.selectByVisibleText(value);
 			}
 		catch (Exception e) {
